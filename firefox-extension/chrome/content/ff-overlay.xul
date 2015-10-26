@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://djangoautorefresh/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://djangoautorefresh/locale/overlay.dtd">
+<overlay id="djangoautorefresh-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="evalByEventPassing.js"/>
+  <script src="overlay.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="djangoautorefresh-strings" src="chrome://djangoautorefresh/locale/overlay.properties"/>
+  </stringbundleset>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="djangoautorefresh-toolbar-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+    label="&djangoautorefreshToolbarButton.label;" tooltiptext="set-by-javascript"
+    type="checkbox"
+    oncommand="djangoautorefresh.onToolbarButtonCommand()"/>
+  </toolbarpalette>
+
+
+
+</overlay>

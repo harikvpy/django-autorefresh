@@ -1,0 +1,4 @@
+<!ENTITY djangoautorefresh.label "Your localized menuitem">
+<!ENTITY djangoautorefreshContext.label "Your Menuitem">
+<!ENTITY djangoautorefreshContext.accesskey "Y">
+<!ENTITY djangoautorefreshToolbarButton.label "Remote Control">

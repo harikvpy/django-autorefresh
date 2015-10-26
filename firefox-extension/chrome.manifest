@@ -1,0 +1,10 @@
+content   djangoautorefresh                 chrome/content/
+skin      djangoautorefresh   classic/1.0   chrome/skin/
+locale    djangoautorefresh   en-US         chrome/locale/en-US/
+
+overlay   chrome://browser/content/browser.xul   chrome://djangoautorefresh/content/ff-overlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://djangoautorefresh/skin/overlay.css
+
+component   {9D538A60-834E-11E2-8D9D-6F406188709B}   components/commandLineHandler.js
+contract    @hari.xyz/djangoautorefresh/command-line-handler;1    {9D538A60-834E-11E2-8D9D-6F406188709B}
+category    command-line-handler    m-djangoautorefresh-clh    @hari.xyz/djangoautorefresh/command-line-handler;1

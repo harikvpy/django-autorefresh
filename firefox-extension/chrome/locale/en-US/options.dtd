@@ -1,0 +1,8 @@
+<!ENTITY prefwindow.title "Django Auto Refresh preferences">
+<!ENTITY pane1.title "Django Auto Refresh preferences">
+<!ENTITY localhostOnly.label "Listen on localhost only">
+<!ENTITY localhostOnly.accesskey "L">
+<!ENTITY portNumber.label "TCP Port Number to Listen on">
+<!ENTITY portNumber.accesskey "P">
+<!ENTITY activeTab.label "Send remote commands to currently active tab">
+<!ENTITY activeTab.accesskey "T">

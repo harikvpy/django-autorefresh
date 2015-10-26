@@ -1,0 +1,17 @@
+#djangoautorefresh-toolbar-button
+{
+  list-style-image: url("chrome://djangoautorefresh/skin/djangoautorefresh.png");
+  -moz-image-region: rect(0px 32px 24px 16px);
+}
+.active#djangoautorefresh-toolbar-button
+{
+  -moz-image-region: rect(0px 16px 24px 0px);
+}
+[iconsize="small"] #djangoautorefresh-toolbar-button
+{
+  -moz-image-region: rect(24px 32px 40px 16px);
+}
+[iconsize="small"] .active#djangoautorefresh-toolbar-button
+{
+  -moz-image-region: rect(24px 16px 40px 0px);
+}
