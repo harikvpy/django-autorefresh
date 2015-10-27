@@ -13,6 +13,7 @@
         "default_icon": "icon_passive.png",
         "default_title": "Django Autorefresh"
     },
+    "options_page": "options.html",
     "permissions": [
         "tabs",
         "activeTab",

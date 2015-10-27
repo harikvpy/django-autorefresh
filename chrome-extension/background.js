@@ -8,7 +8,11 @@ var pollInterval = 1 * 1000;
 var timerId = 0;
 
 function autoRefresh(tabId) {
-    var searchUrl = "http://localhost:32000/";
+    var port = localStorage['port'];
+    if (port == undefined) {
+        port = 32000;
+    }
+    var searchUrl = "http://localhost:/"+port;
     var x = new XMLHttpRequest();
     x.open('GET', searchUrl);
     //x.responseType = 'json';
