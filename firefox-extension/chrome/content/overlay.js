@@ -85,7 +85,7 @@ djangoautorefresh = {
             }
         });
         var prefs = this.getPreferences();
-        var url = "http://localhost:" + prefs.port;
+        var url = "http://localhost:" + prefs.portNumber;
         oReq.open("GET", url);
         oReq.send();
     },
@@ -145,7 +145,7 @@ djangoautorefresh = {
                 "extensions.djangoautorefresh.portNumber"
             );
             return {
-                portNumber: portNumber,
+                portNumber: portNumber
             };
     },
 
