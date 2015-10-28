@@ -39,6 +39,7 @@ class SilentHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         global _last_refresh
         s.send_response(200)
         s.send_header("Content-type", "text/json")
+        s.send_header("Access-Control-Allow-Origin", "*")
         s.end_headers()
         s.wfile.write('{ "changed": %d }\n' % s.needs_refresh())
         _last_refresh = _needs_refresh
