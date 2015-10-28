@@ -4,11 +4,17 @@
     <em:id>django-auto-refresh@hari.xyz</em:id>
     <em:type>2</em:type>
     <em:name>Django Auto Refresh</em:name>
-    <em:version>0.1</em:version>
+    <em:iconURL>chrome://djangoautorefresh/skin/icon_32.png</em:iconURL>
+    <em:icon64URL>chrome://djangoautorefresh/skin/icon_64.png</em:icon64URL>
+    <em:version>1.0</em:version>
     <em:creator>Hari Mahadevan</em:creator>
     <em:homepageURL>https://github.com/harikvpy/django-autorefresh</em:homepageURL>
-    <em:description>Automatically refresh the browser when Django source files change.</em:description>
+    <em:description>Enables automatic refresh of the activated browser tab whenever Django development server reloads itself when it detects Python sources have changed. Use with companion Django app django-autorefresh, from http://github.com/harikvpy/django-autorefresh.
+
+Django development server monitors the project's Python source files, which when saved causes the development server to reload itself making the changes current. However, to see the changes on the browser, you need to manually refresh the browser page. This extension, when used with the companion Django app, automates the browser page refresh whenever Django development server is reloaded eliminating the need for explicit refresh by the user.
+    </em:description>
     <em:aboutURL>chrome://djangoautorefresh/content/about.xul</em:aboutURL>
+    <em:optionsURL>chrome://djangoautorefresh/content/options.xul</em:optionsURL>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->

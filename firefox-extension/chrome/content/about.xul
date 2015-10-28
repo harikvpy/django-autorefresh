@@ -4,14 +4,16 @@
 
 <!DOCTYPE dialog SYSTEM "chrome://djangoautorefresh/locale/about.dtd">
 
-<dialog title="&about; Remote Control" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<dialog title="&about; Django Auto Refresh" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <groupbox align="center" orient="horizontal">
     <vbox>
-      <text value="Remote Control" style="font-weight: bold; font-size: x-large;"/>
+      <text value="Django Auto Refresh" style="font-weight: bold; font-size: x-large;"/>
       <text value="&version; 1.0"/>
       <separator class="thin"/>
+      <separator class="thin"/>
+      <separator class="thin"/>
       <text value="&createdBy;" style="font-weight: bold;"/>
-      <text value="Peter Valdemar Mørch"/>
+      <label value="Hari Mahadevan" href="http://www.hari.xyz" class="text-link" />
       <separator class="thin"/>
     </vbox>
   </groupbox>

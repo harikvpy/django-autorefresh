@@ -34,7 +34,6 @@ djangoautorefresh = {
     serverSocket: null,
     timerId: 0,
     pollInterval: 1000,
-    active: false,
     buttonID: 'djangoautorefresh-toolbar-button',
 
     onLoad: function() {
@@ -85,7 +84,9 @@ djangoautorefresh = {
                                     null);
             }
         });
-        oReq.open("GET", "http://localhost:32000");
+        var prefs = this.getPreferences();
+        var url = "http://localhost:" + prefs.port;
+        oReq.open("GET", url);
         oReq.send();
     },
 
@@ -111,6 +112,7 @@ djangoautorefresh = {
             clearInterval(this.timerId);
             this.timerId = 0;
         }
+        this.alignToolbarButton();
     },
 
     maybeStartAutomatically: function () {
@@ -139,28 +141,21 @@ djangoautorefresh = {
             var prefManager = Components.classes[
                 "@mozilla.org/preferences-service;1"
             ].getService(Components.interfaces.nsIPrefBranch);
-            var localhostOnly = prefManager.getBoolPref(
-                "extensions.djangoautorefresh.localhostOnly"
-            );
             var portNumber = prefManager.getIntPref(
                 "extensions.djangoautorefresh.portNumber"
             );
-            var activeTab = prefManager.getBoolPref(
-                "extensions.djangoautorefresh.activeTab"
-            );
             return {
-                localhostOnly: localhostOnly,
                 portNumber: portNumber,
-                activeTab: activeTab
             };
     },
 
     alignToolbarButton: function() {
         var button = document.getElementById(this.buttonID);
-        if (! button)
+        if (! button) {
             return;
+        }
         var ttText;
-        if (this.active) {
+        if (this.timerId != 0) {
             // Add the 'active' class
             if (! button.className.match(/ active/)) {
                 button.className += " active";
@@ -169,11 +164,7 @@ djangoautorefresh = {
 
             ttText = this.strings.getFormattedString(
                 "enabledToolbarTooltip",
-                [ this.strings.getString(
-                    prefs.localhostOnly ? 'localhost' : 'allhosts'
-                  ),
-                  prefs.portNumber
-                ]
+                [ prefs.portNumber ]
             );
             button.checked = "true";
         } else {

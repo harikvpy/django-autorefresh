@@ -4,12 +4,8 @@
 <prefwindow id="djangoautorefresh-preferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
   <prefpane id="pane1" label="&pane1.title;">
     <preferences>
-      <preference id="localhostOnly" name="extensions.djangoautorefresh.localhostOnly" type="bool"/>
-      <preference id="activeTab" name="extensions.djangoautorefresh.activeTab" type="bool"/>
       <preference id="portNumber" name="extensions.djangoautorefresh.portNumber" type="int"/>
     </preferences>
-    <checkbox id="localhostOnly" preference="localhostOnly" label="&localhostOnly.label;" accesskey="&localhostOnly.accesskey;"/>
     <label accesskey="&portNumber.accesskey;" control="portNumber">&portNumber.label;</label><textbox id="portNumber" preference="portNumber"/>
-    <checkbox id="activeTab" preference="activeTab" label="&activeTab.label;" accesskey="&activeTab.accesskey;"/>
   </prefpane>
 </prefwindow>

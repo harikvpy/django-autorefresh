@@ -15,7 +15,4 @@
     type="checkbox"
     oncommand="djangoautorefresh.onToolbarButtonCommand()"/>
   </toolbarpalette>
-
-
-
 </overlay>
