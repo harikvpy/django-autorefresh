@@ -12,7 +12,7 @@ function autoRefresh(tabId) {
     if (port == undefined) {
         port = 32000;
     }
-    var searchUrl = "http://localhost:/"+port;
+    var searchUrl = "http://localhost:"+port+"/";
     var x = new XMLHttpRequest();
     x.open('GET', searchUrl);
     //x.responseType = 'json';
