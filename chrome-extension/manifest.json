@@ -3,7 +3,7 @@
 
     "name": "Django Auto Refresh",
     "description": "Auto refreshes the browser page when Django development server reloads itself. Use with companion Django app: django-autorefresh.",
-    "version": "1.0",
+    "version": "1.1",
 
     "background": { "scripts": ["background.js"] },
 
