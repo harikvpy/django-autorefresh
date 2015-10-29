@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "Django Auto Refresh",
-    "description": "Enables auto refresh of the browser tab when Django development server reloads itself. Use with companion Django app: django-autorefresh.",
+    "description": "Auto refreshes the browser page when Django development server reloads itself. Use with companion Django app: django-autorefresh.",
     "version": "1.0",
 
     "background": { "scripts": ["background.js"] },
