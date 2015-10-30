@@ -17,8 +17,11 @@ Note that this addional server is bound to localhost only and the app does not i
 
 # How to use
 * Install the relevant browser extension. Versions for both Firefox and Chrome are provided. Extensions are also available in the respective extension marketplace. You may also install the extension from its source after cloning the repo locally.
-* Add the `django-app/autorefresh` app to your Django project's `INSTALLED_APPS`.
+* Add the companion app `django-app/autorefresh` to your Django project's `INSTALLED_APPS`.
 * Run the development server using the command line `python ./manage.py autorefreshserver`.
+* Select the Firefox or Chrome tab displaying the Django development server page
+* Click on the Auto Refresh toolbar button to activate the auto refresh feature
+* Go on and edit your Django project's source files and save them. See the browser page being automatically refreshed.
 
 # Additional Details
 By default the refresh status server is listening on port 32000 (bound to localhost). You can change this by specifying `--refreshport <portnumber>` along with the `autorefreshserver`. If you change it, make sure you specify the same port number in the extension as well by configuring its options.
