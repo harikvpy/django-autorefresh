@@ -77,11 +77,8 @@ djangoautorefresh = {
             //console.log(oReq.response);
             var obj = JSON.parse(oReq.response);
             if (obj.changed) {
-                //console.log("Changed");
-                var command = "window.location.reload()";
-                evalByEventPassing(djangoautorefresh.controlledWindow,
-                                    command,
-                                    null);
+                //console.log("Django server reloaded, reloading location: " + djangoautorefresh.controlledWindow.document.location);
+                djangoautorefresh.controlledWindow.document.location.reload();
             }
         });
         var prefs = this.getPreferences();
