@@ -6,9 +6,13 @@ import BaseHTTPServer
 import thread
 import os
 import sys
+import subprocess
 
 # default port number where we would run the change reporting server
 REFRESH_PORT = 32000
+
+# prompts of our support PDBs
+PDB_PROMPTS = ["pdb> ", "ipdb> "]
 
 # Global counter that will be incremented whenever a refresh is required
 _needs_refresh = 0
@@ -142,11 +146,12 @@ class Command(RunServerCommand):
                 args = ['"%s"' % arg for arg in args]
             new_environ = os.environ.copy()
             new_environ["RUN_MAIN"] = 'true'
-            import subprocess
+
             proc = subprocess.Popen(args,
                     bufsize=1,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.STDOUT,
+                    stdin=subprocess.PIPE,
                     env=new_environ,
                     close_fds=True)
 
@@ -162,18 +167,43 @@ class Command(RunServerCommand):
                         break;
                 proc.poll()
 
-            # Since the development server is fully initialized,
-            # we can now set the refresh state flag
+            # Since the development server is fully initialized, we can
+            # now set the refresh state flag.
             sys.stdout.write("Development server reinitialized, setting refresh flag\n")
             _needs_refresh += 1
 
-            # Read any messages printed by the development server to stdout
-            # and reprint them.
+            # Here we're reading the output character by character rather
+            # than line by line as done previously.
+            # This is necessary for us to integrate with python debuggers
+            # such as pdb and ipdb. When the child process is interrupted
+            # by one of these two debuggers, it shows a prompt
+            # and waits for user input. Since these prompts do not have a
+            # terminating \n, readline would never return and we get a
+            # non-intuitive user experience where inputs do not correspond
+            # to pdb> prompts. Reading one character at a time allows to
+            # detect these prompts and then ask user for input which we can
+            # write back to child process' stdin.
+
+            line = ''
             while True and proc.returncode == None:
-                line = proc.stdout.readline()
-                if line:
-                    print line,
-                proc.poll()
+                char = proc.stdout.read(1)
+                if char:
+                    sys.stdout.write(char)
+
+                # Buffer the character until we hit newline or one of
+                # the recognized pdb prompts (PDB_PROMPTS)
+                if char != '\n':
+                    line += char
+                    if line in PDB_PROMPTS: # keep checking if we hit pdb
+                        # Child process has hit pdb breakpoint.
+                        # Read a command from stdin and write to the
+                        # child process' stdin
+                        line = ''
+                        command = raw_input()
+                        proc.stdin.write(command+'\n')
+                else:
+                    line = ''
+                proc.poll() # will set the proc.returncode if proc terminates
 
             sys.stdout.write("Development server terminated with exit code %d\n" % proc.returncode)
             if proc.returncode != 3:
