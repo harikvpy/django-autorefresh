@@ -12,7 +12,7 @@ import subprocess
 REFRESH_PORT = 32000
 
 # prompts of our support PDBs
-PDB_PROMPTS = ["pdb> ", "ipdb> "]
+PDB_PROMPTS = ["(Pdb) ", "ipdb> "]
 
 # Global counter that will be incremented whenever a refresh is required
 _needs_refresh = 0
