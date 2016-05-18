@@ -42,7 +42,7 @@ no negative impact.
   marketplace. You may also install the extension from its source after 
   cloning the repo locally.
 * Install the companion app `django-app/autorefresh` in your python environment.
-  You can do this by `pip install e django-app/setup.py`.
+  You can do this by `pip install -e django-app/setup.py`.
 * Run the development server using the command line `python ./manage.py autorefreshserver`.
 * Select the Firefox or Chrome tab displaying the Django development server page
 * Click on the Auto Refresh toolbar button to activate the auto refresh feature
