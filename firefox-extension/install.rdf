@@ -6,7 +6,7 @@
     <em:name>Django Auto Refresh</em:name>
     <em:iconURL>chrome://djangoautorefresh/skin/icon_32.png</em:iconURL>
     <em:icon64URL>chrome://djangoautorefresh/skin/icon_64.png</em:icon64URL>
-    <em:version>1.0</em:version>
+    <em:version>1.1</em:version>
     <em:creator>Hari Mahadevan</em:creator>
     <em:homepageURL>https://github.com/harikvpy/django-autorefresh</em:homepageURL>
     <em:description>Enables automatic refresh of the activated browser tab whenever Django development server reloads itself when it detects Python sources have changed. Use with companion Django app django-autorefresh, from http://github.com/harikvpy/django-autorefresh.
