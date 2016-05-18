@@ -37,12 +37,15 @@ involve any models and/or views. All it has is a single python source for the
 no negative impact.
 
 # How to use
+* Clone the source from my github repo: 
+  `https://github.com/harikvpy/django-autorefresh.git`.
 * Install the relevant browser extension. Versions for both Firefox and Chrome 
   are provided. Extensions are also available in the respective extension 
   marketplace. You may also install the extension from its source after 
   cloning the repo locally.
 * Install the companion app `django-app/autorefresh` in your python environment.
-  You can do this by `pip install e django-app/setup.py`.
+  You can do this by `pip install django-app/setup.py` issued from the source's 
+  cloned folder.
 * Run the development server using the command line `python ./manage.py autorefreshserver`.
 * Select the Firefox or Chrome tab displaying the Django development server page
 * Click on the Auto Refresh toolbar button to activate the auto refresh feature
