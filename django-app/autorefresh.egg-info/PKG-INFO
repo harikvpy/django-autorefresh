@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: autorefresh
+Version: 0.2
+Summary: Enabling app for browser autorefresh when django source changes
+Home-page: https://www.github.com/harikvpy/django-autorefresh/
+Author: Hari Mahadevan
+Author-email: hari@hari.xyz
+License: BSD-3
+Description: UNKNOWN
+Keywords: django,autorefresh,autoreload
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
