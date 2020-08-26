@@ -162,7 +162,7 @@ class Command(RunServerCommand):
             while True and proc.returncode == None:
                 line = proc.stdout.readline()
                 if line:
-                    print line,
+                    print(line),
                     if 'Quit the server with CONTROL' in line:
                         break;
                 proc.poll()
